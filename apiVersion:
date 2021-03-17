@@ -1,0 +1,30 @@
+nd: Config
+clusters:
+- name: "local"
+  cluster:
+    server: "https://localhost/k8s/clusters/local"
+    certificate-authority-data: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJpVENDQ\
+      VM2Z0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQTdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKY\
+      kdsemRHVnVaWEl0YjNKbk1Sc3dHUVlEVlFRREV4SmtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRXdIa\
+      GNOTWpFdwpNekUxTURnd01qQXpXaGNOTXpFd016RXpNRGd3TWpBeldqQTdNUnd3R2dZRFZRUUtFe\
+      E5rZVc1aGJXbGpiR2x6CmRHVnVaWEl0YjNKbk1Sc3dHUVlEVlFRREV4SmtlVzVoYldsamJHbHpkR\
+      1Z1WlhJdFkyRXdXVEFUQmdjcWhrak8KUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVNXNlZGMGZwYnUwZ\
+      ERoWjBvMHJhaktYengrcmhoQVB3ekpQK3BTZy9WcgptTDZWTVNPdVJnUkhKTHI1N2U1a2FLTTZud\
+      0JjNU1rYVBkakhRN3ArUHFLUm95TXdJVEFPQmdOVkhROEJBZjhFCkJBTUNBcVF3RHdZRFZSMFRBU\
+      UgvQkFVd0F3RUIvekFLQmdncWhrak9QUVFEQWdOSkFEQkdBaUVBaXRxNEFBeGcKd1lGTTJITHhxM\
+      lA2dklha0ZmVnRVRXJVV043eFJBZi9pS29DSVFEN1kwM3VFTloxVkFJN0xKU0ExRUZpL0VOSApUU\
+      VhCUDEzeWNaZmlSUnJERVE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t"
+
+users:
+- name: "local"
+  user:
+    token: "kubeconfig-user-dbnrc:6t9xnzrqkqrjftjppjcs8qtwd8grjcb4j87tq4mwztx2hqb54m8pzd"
+
+
+contexts:
+- name: "local"
+  context:
+    user: "local"
+    cluster: "local"
+
+current-context: "local"

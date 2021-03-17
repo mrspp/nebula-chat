@@ -1,0 +1,37 @@
+FROM golang:1.12.12 AS builder
+
+ENV CGO_ENABLED 0
+ENV TARGET_DIR /home/phuong/Documents/chatengine
+
+RUN echo $GOPATH
+RUN mkdir -p $TARGET_DIR
+RUN cd $TARGET_DIR
+COPY . $TARGET_DIR/
+
+
+# build session
+RUN cd ${TARGET_DIR}/access/session && go build -ldflags='-s -w'
+
+
+
+
+FROM ineva/alpine:3.10.3
+
+ENV TARGET_DIR /home/phuong/Documents/chatengine
+WORKDIR /app/
+
+COPY ./entrypont.sh /app/
+
+RUN mkdir -p /app/config-templates
+
+
+# build session
+COPY --from=builder ${TARGET_DIR}/access/session/session ./
+
+
+# copy configs
+COPY --from=builder ${TARGET_DIR}/scripts/config/*.toml ./config-templates/
+COPY --from=builder ${TARGET_DIR}/scripts/config/*.json ./config-templates/
+COPY --from=builder ${TARGET_DIR}/scripts/config/*.key ./config-templates/
+
+ENTRYPOINT sh /app/entrypont.sh
