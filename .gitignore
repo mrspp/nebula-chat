@@ -53,3 +53,4 @@ docker/redis/data/
 
 vendor
 .vscode
+docker-compose
