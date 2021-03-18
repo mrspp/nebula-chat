@@ -10,8 +10,8 @@ services:
         max-file: "5"
     volumes:
       - /home/phuong/Documents/chatengine/docker/etcd/data:/data
-    # ports: 
-    #   - 2379:2379
+    ports: 
+      - 2379:2379
   mysql:
     image: mysql:5.7.17
     restart: always
@@ -26,8 +26,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=chatengine
       - MYSQL_DATABASE=chatengine
-    # ports:
-    #   - 3306:3306
+    ports:
+      - 3306:3306
   redis:
     image: redis:5.0.0-alpine3.8
     restart: always
@@ -39,8 +39,8 @@ services:
       - /home/phuong/Documents/chatengine/docker/redis/redis.conf:/etc/redis/redis.conf
       - /home/phuong/Documents/chatengine/docker/redis/data:/data
     entrypoint: redis-server /etc/redis/redis.conf
-    # ports: 
-    #   - 6379:6379
+    ports: 
+      - 6379:6379
   # chatengine:
   #   image: phuongct/chatengine:latest
   #   restart: always
