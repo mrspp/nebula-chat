@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: frontend
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - env:
+        - name: CHATENGINE_HOST
+          value: 127.0.0.1
+        image: phuongct/frontend:latest
+        name: frontend
+        ports:
+        - containerPort: 8800
+        resources: {}
+        volumeMounts:
+        - mountPath: /opt/nbfs
+          name: frontend-claim0
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes:
+      - name: frontend-claim0
+        persistentVolumeClaim:
+          claimName: frontend-claim0
+status: {}

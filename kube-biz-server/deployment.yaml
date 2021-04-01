@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: biz-server
+  name: biz-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: biz-server
+  template:
+    metadata:
+      labels:
+        app: biz-server
+    spec:
+      containers:
+      - env:
+        - name: CHATENGINE_HOST
+          value: 127.0.0.1
+        image: phuongct/auth-session:latest
+        name: biz-server
+        ports:
+        - containerPort: 10001
+        resources: {}
+        volumeMounts:
+        - mountPath: /opt/nbfs
+          name: biz-server-claim0
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes:
+      - name: biz-server-claim0
+        persistentVolumeClaim:
+          claimName: biz-server-claim0
+status: {}

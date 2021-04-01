@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: auth-session
+  name: auth-session
+spec:
+  ports:
+  - name: "10010"
+    port: 10010
+    targetPort: 10010
+  selector:
+    app: auth-session
+status:
+  loadBalancer: {}

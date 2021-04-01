@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: document
+  name: document
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: document
+  template:
+    metadata:
+      labels:
+        app: document
+    spec:
+      containers:
+      - env:
+        - name: CHATENGINE_HOST
+          value: 127.0.0.1
+        image: phuongct/document:latest
+        name: document
+        ports:
+        - containerPort: 10009
+        resources: {}
+        volumeMounts:
+        - mountPath: /opt/nbfs
+          name: document-claim0
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes:
+      - name: document-claim0
+        persistentVolumeClaim:
+          claimName: document-claim0
+status: {}

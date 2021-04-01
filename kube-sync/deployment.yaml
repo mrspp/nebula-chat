@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sync
+  name: sync
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sync
+  template:
+    metadata:
+      labels:
+        app: sync
+    spec:
+      containers:
+      - env:
+        - name: CHATENGINE_HOST
+          value: 127.0.0.1
+        image: phuongct/sync:latest
+        name: sync
+        ports:
+        - containerPort: 10002
+        resources: {}
+        volumeMounts:
+        - mountPath: /opt/nbfs
+          name: sync-claim0
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes:
+      - name: sync-claim0
+        persistentVolumeClaim:
+          claimName: sync-claim0
+status: {}

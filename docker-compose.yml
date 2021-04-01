@@ -75,7 +75,7 @@ services:
       - TZ:Asia/Ho_Chi_Minh
       - CHATENGINE_HOST=127.0.0.1
     volumes:
-      - /home/phuong/Documents/chatengine/docker/nbfs/0:/opt/nbfs
+      - /home/phuong/Documents/chatengine/docker/nbfs:/opt/nbfs
     ports:
       - 10005:10005
     depends_on:

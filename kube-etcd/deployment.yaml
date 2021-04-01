@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: etcd
+spec:
+  selector:
+    matchLabels:
+      app: etcd
+  template:
+    metadata:
+      labels:
+        app: etcd
+    spec:
+      containers:
+      - name: etcd
+        image: appcelerator/etcd:3.3.3
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 2379

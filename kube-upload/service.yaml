@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: upload
+  name: upload
+spec:
+  ports:
+  - name: "10004"
+    port: 10004
+    targetPort: 10004
+  selector:
+    app: upload
+status:
+  loadBalancer: {}

@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: auth-session
+  name: auth-session
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth-session
+  template:
+    metadata:
+      labels:
+        app: auth-session
+    spec:
+      containers:
+      - env:
+        - name: CHATENGINE_HOST
+          value: 127.0.0.1
+        image: phuongct/auth-session:latest
+        name: auth-session
+        ports:
+        - containerPort: 10010
+        resources: {}
+        volumeMounts:
+        - mountPath: /opt/nbfs
+          name: auth-session-claim0
+      volumes:
+      - name: auth-session-claim0
+        persistentVolumeClaim:
+          claimName: auth-session-claim0
