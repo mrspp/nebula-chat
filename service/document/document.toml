@@ -12,14 +12,14 @@ addr = "0.0.0.0:10009"
 [rpcServer.rpcDiscovery]
 serviceName = "document"
 nodeID = "node1"
-rPCAddr = "127.0.0.1:10009"
-etcdAddrs = ["http://127.0.0.1:2379"]
+rPCAddr = "document:10009"
+etcdAddrs = ["http://etcd:2379"]
 interval = "2s"
 tTL = "10s"
 
 [[redis]]
 name = "cache"
-addr = "127.0.0.1:6379"
+addr = "redis:6379"
 idle = 100
 active = 100
 dialTimeout = "1s"
@@ -31,12 +31,12 @@ password = ""
 
 [[mysql]]
 name = "immaster"
-dsn = "root:@tcp(127.0.0.1:3306)/chatengine?charset=utf8mb4"
+dsn = "root:@tcp(mysql:3306)/chatengine?charset=utf8mb4"
 active = 5
 idle = 2
 
 [[mysql]]
 name = "imslave"
-dsn = "root:@tcp(127.0.0.1:3306)/chatengine?charset=utf8mb4"
+dsn = "root:@tcp(mysql:3306)/chatengine?charset=utf8mb4"
 active = 5
 idle = 2

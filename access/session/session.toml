@@ -12,34 +12,34 @@ addr = "0.0.0.0:10000"
 [server.discovery]
 serviceName = "session"
 nodeID = "node1"
-rPCAddr = "127.0.0.1:10000"
-etcdAddrs = ["http://127.0.0.1:2379"]
+rPCAddr = "session:10000"
+etcdAddrs = ["http://etcd:2379"]
 interval = "2s"
 tTL = "10s"
 
 [authSessionRpcClient]
 serviceName = "auth_session"
-etcdAddrs = ["http://127.0.0.1:2379"]
+etcdAddrs = ["http://etcd:2379"]
 balancer = "round_robin"
 
 [bizRpcClient]
 serviceName = "biz"
-etcdAddrs = ["http://127.0.0.1:2379"]
+etcdAddrs = ["http://etcd:2379"]
 balancer = "round_robin"
 
 [nbfsRpcClient]
 serviceName = "upload"
-etcdAddrs = ["http://127.0.0.1:2379"]
+etcdAddrs = ["http://etcd:2379"]
 balancer = "round_robin"
 
 [syncRpcClient]
 serviceName = "sync2"
-etcdAddrs = ["http://127.0.0.1:2379"]
+etcdAddrs = ["http://etcd:2379"]
 balancer = "round_robin"
 
 [[redis]]
 name = "cache"
-addr = "127.0.0.1:6379"
+addr = "redis:6379"
 idle = 100
 active = 100
 dialTimeout = "1s"

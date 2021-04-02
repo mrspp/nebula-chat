@@ -10,8 +10,8 @@ addr = "0.0.0.0:10002"
 [server.rpcDiscovery]
 serviceName = "sync2"
 nodeID = "node1"
-rPCAddr = "127.0.0.1:10002"
-etcdAddrs = ["http://127.0.0.1:2379"]
+rPCAddr = "sync:10002"
+etcdAddrs = ["http://etcd:2379"]
 interval = "2s"
 tTL = "10s"
 
@@ -19,13 +19,13 @@ tTL = "10s"
     [[sessionClient.clients]]
     name = "session"
     protoName = "zproto"
-    etcdAddrs = ["http://127.0.0.1:2379"]
-    addrList = ["127.0.0.1:10000"]
+    etcdAddrs = ["http://etcd:2379"]
+    addrList = ["session:10000"]
     balancer = "round_robin"
 
 [[redis]]
 name = "cache"
-addr = "127.0.0.1:6379"
+addr = "redis:6379"
 idle = 100
 active = 100
 dialTimeout = "1s"
@@ -37,12 +37,12 @@ password = ""
 
 [[mysql]]
 name = "immaster"
-dsn = "root:@tcp(127.0.0.1:3306)/chatengine?charset=utf8mb4"
+dsn = "root:@tcp(mysql:3306)/chatengine?charset=utf8mb4"
 active = 5
 idle = 2
 
 [[mysql]]
 name = "imslave"
-dsn = "root:@tcp(127.0.0.1:3306)/chatengine?charset=utf8mb4"
+dsn = "root:@tcp(mysql:3306)/chatengine?charset=utf8mb4"
 active = 5
 idle = 2

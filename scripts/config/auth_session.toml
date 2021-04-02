@@ -9,23 +9,23 @@ addr = "0.0.0.0:10010"
 [rpcServer.rpcDiscovery]
 serviceName = "auth_session"
 nodeID = "node1"
-rPCAddr = "127.0.0.1:10010"
-etcdAddrs = ["http://127.0.0.1:2379"]
+rPCAddr = "auth-session:10010"
+etcdAddrs = ["http://etcd:2379"]
 interval = "2s"
 tTL = "10s"
 
 [cache]
 adapterName = "redis"
-config = "{\"conn\":\"127.0.0.1:6379\",\"dbNum\":\"0\"}"
+config = "{\"conn\":\"redis:6379\",\"dbNum\":\"0\"}"
 
 [[mysql]]
 name = "immaster"
-dsn = "root:@tcp(127.0.0.1:3306)/chatengine?charset=utf8mb4"
+dsn = "phuongct:123456@tcp(mysql:3306)/chatengine?charset=utf8mb4"
 active = 5
 idle = 2
 
 [[mysql]]
 name = "imslave"
-dsn = "root:@tcp(127.0.0.1:3306)/chatengine?charset=utf8mb4"
+dsn = "phuongct:123456@tcp(mysql:3306)/chatengine?charset=utf8mb4"
 active = 5
 idle = 2

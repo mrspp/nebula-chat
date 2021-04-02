@@ -17,7 +17,7 @@ spec:
       containers:
       - env:
         - name: CHATENGINE_HOST
-          value: 127.0.0.1
+          value: document
         image: phuongct/document:latest
         name: document
         ports:

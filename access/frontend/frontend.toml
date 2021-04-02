@@ -13,8 +13,8 @@ addr = "0.0.0.0:8800"
 [server80.discovery]
 serviceName = "frontend80"
 nodeID = "node1"
-rPCAddr = "127.0.0.1:8800"
-etcdAddrs = ["http://127.0.0.1:2379"]
+rPCAddr = "frontend:8800"
+etcdAddrs = ["http://etcd:2379"]
 interval = "2s"
 tTL = "10s"
 
@@ -28,7 +28,7 @@ addr = "0.0.0.0:12345"
 serviceName = "frontend443"
 nodeID = "node1"
 rPCAddr = "127.0.0.1:12345"
-etcdAddrs = ["http://127.0.0.1:2379"]
+etcdAddrs = ["http://etcd:2379"]
 interval = "2s"
 tTL = "10s"
 
@@ -42,21 +42,21 @@ addr = "0.0.0.0:5222"
 serviceName = "frontend5222"
 nodeID = "node1"
 rPCAddr = "127.0.0.1:5222"
-etcdAddrs = ["http://127.0.0.1:2379"]
+etcdAddrs = ["http://etcd:2379"]
 interval = "2s"
 tTL = "10s"
 
 [clients]
-    [[clients.clients]]
-    name = "handshake"
-    protoName = "brpc"
-    etcdAddrs = ["http://127.0.0.1:2379"]
-    addrList = ["127.0.0.1:10005"]
-    balancer = "random"
+[[clients.clients]]
+name = "handshake"
+protoName = "brpc"
+etcdAddrs = ["http://etcd:2379"]
+addrList = ["auth-key:10005"]
+balancer = "random"
 
-    [[clients.clients]]
-    name = "session"
-    protoName = "brpc"
-    etcdAddrs = ["http://127.0.0.1:2379"]
-    addrList = ["127.0.0.1:10000"]
-    balancer = "ketama"
+[[clients.clients]]
+name = "session"
+protoName = "brpc"
+etcdAddrs = ["http://etcd:2379"]
+addrList = ["session:10000"]
+balancer = "ketama"

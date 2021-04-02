@@ -12,7 +12,7 @@ addr = "0.0.0.0:10004"
 [rpcServer.rpcDiscovery]
 serviceName = "upload"
 nodeID = "node1"
-rPCAddr = "127.0.0.1:10004"
-etcdAddrs = ["http://127.0.0.1:2379"]
+rPCAddr = "upload:10004"
+etcdAddrs = ["http://etcd:2379"]
 interval = "2s"
 tTL = "10s"

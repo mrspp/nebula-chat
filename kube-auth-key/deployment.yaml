@@ -17,7 +17,7 @@ spec:
       containers:
       - env:
         - name: CHATENGINE_HOST
-          value: 127.0.0.1
+          value: auth-key
         image: phuongct/auth-key:latest
         name: auth-key
         ports:

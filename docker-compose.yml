@@ -73,7 +73,7 @@ services:
         max-file: "5"
     environment: 
       - TZ:Asia/Ho_Chi_Minh
-      - CHATENGINE_HOST=127.0.0.1
+      - CHATENGINE_HOST=auth-key
     volumes:
       - /home/phuong/Documents/chatengine/docker/nbfs:/opt/nbfs
     ports:
@@ -91,7 +91,7 @@ services:
         max-file: "5"
     environment: 
       - TZ:Asia/Ho_Chi_Minh
-      - CHATENGINE_HOST=127.0.0.1
+      - CHATENGINE_HOST=auth-session
     volumes: 
       - /home/phuong/Documents/chatengine/docker/nbfs:/opt/nbfs
     ports: 
@@ -109,7 +109,7 @@ services:
         max-file: "5"
     environment: 
       - TZ:Asia/Ho_Chi_Minh
-      - CHATENGINE_HOST=127.0.0.1
+      - CHATENGINE_HOST=frontend
     volumes: 
       - /home/phuong/Documents/chatengine/docker/nbfs:/opt/nbfs
     ports: 
@@ -127,7 +127,7 @@ services:
         max-file: "5"
     environment: 
       - TZ:Asia/Ho_Chi_Minh
-      - CHATENGINE_HOST=127.0.0.1
+      - CHATENGINE_HOST=session
     volumes: 
       - /home/phuong/Documents/chatengine/docker/nbfs:/opt/nbfs
     ports: 
@@ -145,7 +145,7 @@ services:
         max-file: "5"
     environment: 
       - TZ:Asia/Ho_Chi_Minh
-      - CHATENGINE_HOST=127.0.0.1
+      - CHATENGINE_HOST=biz-server
     volumes: 
       - /home/phuong/Documents/chatengine/docker/nbfs:/opt/nbfs
     ports: 
@@ -163,7 +163,7 @@ services:
         max-file: "5"
     environment: 
       - TZ:Asia/Ho_Chi_Minh
-      - CHATENGINE_HOST=127.0.0.1
+      - CHATENGINE_HOST=sync
     volumes: 
       - /home/phuong/Documents/chatengine/docker/nbfs:/opt/nbfs
     ports: 
@@ -181,7 +181,7 @@ services:
         max-file: "5"
     environment: 
       - TZ:Asia/Ho_Chi_Minh
-      - CHATENGINE_HOST=127.0.0.1
+      - CHATENGINE_HOST=upload
     volumes: 
       - /home/phuong/Documents/chatengine/docker/nbfs:/opt/nbfs
     ports: 
@@ -199,7 +199,7 @@ services:
         max-file: "5"
     environment: 
       - TZ:Asia/Ho_Chi_Minh
-      - CHATENGINE_HOST=127.0.0.1
+      - CHATENGINE_HOST=document
     volumes: 
       - /home/phuong/Documents/chatengine/docker/nbfs:/opt/nbfs
     ports: 

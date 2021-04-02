@@ -7,13 +7,13 @@ serverId = 1
 [[clients]]
 name = "test_server"
 protoName = "brpc"
-etcdAddrs = ["http://127.0.0.1:2379"]
-addrList = ["127.0.0.1:10000"]
+etcdAddrs = ["http://etcd:2379"]
+addrList = ["session:10000"]
 balancer = "round_robin"
 
 #[[clients]]
 #name = "test_server2"
 #protoName = "brpc"
-#etcdAddrs = ["http://127.0.0.1:2379"]
-#addrList = ["127.0.0.1:10000"]
+#etcdAddrs = ["http://etcd:2379"]
+#addrList = ["session:10000"]
 #balancer = "round_robin"

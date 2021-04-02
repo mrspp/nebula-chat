@@ -12,13 +12,13 @@ addr = "0.0.0.0:10005"
 
 [authSessionRpcClient]
 serviceName = "auth_session"
-etcdAddrs = ["http://127.0.0.1:2379"]
+etcdAddrs = ["http://etcd:2379"]
 balancer = "round_robin"
 
 [server.discovery]
 serviceName = "handshake"
 nodeID = "node1"
-rPCAddr = "127.0.0.1:10005"
-etcdAddrs = ["http://127.0.0.1:2379"]
+rPCAddr = "auth-key:10005"
+etcdAddrs = ["http://etcd:2379"]
 interval = "2s"
 tTL = "10s"
