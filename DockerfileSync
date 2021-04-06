@@ -29,7 +29,7 @@ COPY --from=builder ${TARGET_DIR}/messenger/sync/sync ./
 
 
 # copy configs
-COPY --from=builder ${TARGET_DIR}/scripts/config/*.toml ./config-templates/
+COPY --from=builder ${TARGET_DIR}/scripts/config/sync.toml ./config-templates/
 COPY --from=builder ${TARGET_DIR}/scripts/config/*.json ./config-templates/
 COPY --from=builder ${TARGET_DIR}/scripts/config/*.key ./config-templates/
 

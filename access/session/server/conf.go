@@ -20,10 +20,11 @@ package server
 import (
 	"flag"
 	"fmt"
+
 	"github.com/BurntSushi/toml"
+	zrpc "github.com/nebula-chat/chatengine/mtproto/rpc"
 	"github.com/nebula-chat/chatengine/pkg/grpc_util/service_discovery"
 	"github.com/nebula-chat/chatengine/pkg/redis_client"
-	"github.com/nebula-chat/chatengine/mtproto/rpc"
 	"github.com/nebula-chat/chatengine/pkg/util"
 )
 
@@ -33,18 +34,18 @@ var (
 )
 
 type sessionConfig struct {
-	ServerId             int32 // 服务器ID
-	Redis                []redis_client.RedisConfig
-	SaltCache            redis_client.RedisConfig
+	ServerId  int32 // 服务器ID
+	Redis     []redis_client.RedisConfig
+	SaltCache redis_client.RedisConfig
 
-	BizRpcClient         service_discovery.ServiceDiscoveryClientConfig
-	NbfsRpcClient        service_discovery.ServiceDiscoveryClientConfig
+	BizRpcClient  service_discovery.ServiceDiscoveryClientConfig
+	NbfsRpcClient service_discovery.ServiceDiscoveryClientConfig
 	// SyncRpcClient        service_discovery.ServiceDiscoveryClientConfig
 	AuthSessionRpcClient service_discovery.ServiceDiscoveryClientConfig
 	Server               *zrpc.ZRpcServerConfig
 
-	RpcClients           []service_discovery.ServiceDiscoveryClientConfig
-	RouterTables         []RouterTable
+	RpcClients   []service_discovery.ServiceDiscoveryClientConfig
+	RouterTables []RouterTable
 }
 
 func init() {

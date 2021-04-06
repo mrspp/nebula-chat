@@ -18,7 +18,7 @@ spec:
       - env:
         - name: CHATENGINE_HOST
           value: biz-server
-        image: phuongct/auth-session:latest
+        image: phuongct/biz-server:latest
         name: biz-server
         ports:
         - containerPort: 10001

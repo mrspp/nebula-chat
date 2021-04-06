@@ -21,7 +21,7 @@ spec:
         image: phuongct/frontend:latest
         name: frontend
         ports:
-        - containerPort: 8800
+        - containerPort: 12345
         resources: {}
         volumeMounts:
         - mountPath: /opt/nbfs

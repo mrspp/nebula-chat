@@ -23,7 +23,7 @@ etcdAddrs = ["http://etcd:2379"]
 balancer = "round_robin"
 
 [bizRpcClient]
-serviceName = "biz"
+serviceName = "biz_server"
 etcdAddrs = ["http://etcd:2379"]
 balancer = "round_robin"
 

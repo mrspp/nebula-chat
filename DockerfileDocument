@@ -27,7 +27,7 @@ COPY --from=builder ${TARGET_DIR}/service/document/document ./
 
 
 # copy configs
-COPY --from=builder ${TARGET_DIR}/scripts/config/*.toml ./config-templates/
+COPY --from=builder ${TARGET_DIR}/scripts/config/document.toml ./config-templates/
 COPY --from=builder ${TARGET_DIR}/scripts/config/*.json ./config-templates/
 COPY --from=builder ${TARGET_DIR}/scripts/config/*.key ./config-templates/
 

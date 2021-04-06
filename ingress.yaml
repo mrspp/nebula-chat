@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-ingress-example
+  annotations:
+    kubernetes.io/ingress.class: kong
+spec:
+  backend:
+    serviceName: frontend
+    servicePort: 8800
+  rules:
+    - host: hello-ingress-example.com
+      http:
+        paths:
+          - path: /frontend
+            backend:
+              serviceName: frontend
+              servicePort: 8800
+          

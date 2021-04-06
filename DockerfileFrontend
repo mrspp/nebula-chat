@@ -28,7 +28,7 @@ RUN mkdir -p /app/config-templates
 COPY --from=builder ${TARGET_DIR}/access/frontend/frontend ./
 
 # copy configs
-COPY --from=builder ${TARGET_DIR}/scripts/config/*.toml ./config-templates/
+COPY --from=builder ${TARGET_DIR}/scripts/config/frontend.toml ./config-templates/
 COPY --from=builder ${TARGET_DIR}/scripts/config/*.json ./config-templates/
 COPY --from=builder ${TARGET_DIR}/scripts/config/*.key ./config-templates/
 

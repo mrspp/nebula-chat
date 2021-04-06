@@ -30,7 +30,7 @@ COPY --from=builder ${TARGET_DIR}/access/auth_key/auth_key ./
 
 
 # copy configs
-COPY --from=builder ${TARGET_DIR}/scripts/config/*.toml ./config-templates/
+COPY --from=builder ${TARGET_DIR}/scripts/config/auth_key.toml ./config-templates/
 COPY --from=builder ${TARGET_DIR}/scripts/config/*.json ./config-templates/
 COPY --from=builder ${TARGET_DIR}/scripts/config/*.key ./config-templates/
 

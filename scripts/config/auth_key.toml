@@ -3,7 +3,7 @@
 ver = "0.0.1"
 serverId = 1
 keyFile = "server_pkcs1.key"
-KeyFingerprint = "12240908862933197005"
+KeyFingerprint = "2066079364791309323"
 
 [server.server]
 name = "handshake"
@@ -16,7 +16,7 @@ etcdAddrs = ["http://etcd:2379"]
 balancer = "round_robin"
 
 [server.discovery]
-serviceName = "handshake"
+serviceName = "auth_key"
 nodeID = "node1"
 rPCAddr = "auth-key:10005"
 etcdAddrs = ["http://etcd:2379"]
