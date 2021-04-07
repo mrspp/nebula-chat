@@ -19,13 +19,14 @@ package net2
 
 import (
 	"fmt"
-	"github.com/golang/glog"
 	"io"
 	"net"
 	"runtime/debug"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/golang/glog"
 )
 
 const maxConcurrentConnection = 100000
@@ -202,6 +203,7 @@ func (s *TcpServer) establishTcpConnection(conn *TcpConnection) {
 		if s.callback != nil {
 			if err := s.callback.OnConnectionDataArrived(conn, msg); err != nil {
 				// TODO: 是否需要关闭?
+				glog.Infof("tunTran Hello Hell Error: %s", err.Error())
 			}
 		}
 	}

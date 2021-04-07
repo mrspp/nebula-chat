@@ -27,7 +27,7 @@ COPY --from=builder ${TARGET_DIR}/messenger/biz_server/biz_server ./
 
 
 # copy configs
-COPY --from=builder ${TARGET_DIR}/scripts/config/biz_server.toml ./config-templates/
+COPY --from=builder ${TARGET_DIR}/scripts/config/*.toml ./config-templates/
 COPY --from=builder ${TARGET_DIR}/scripts/config/*.json ./config-templates/
 COPY --from=builder ${TARGET_DIR}/scripts/config/*.key ./config-templates/
 

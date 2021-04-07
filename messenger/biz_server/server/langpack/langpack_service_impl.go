@@ -35,10 +35,10 @@ var (
 )
 
 func init() {
-	if _, err := toml.DecodeFile(util.GetWorkingDirectory() + "/" + LANG_PACK_EN_FILE, &langPacksEn); err != nil {
+	if _, err := toml.DecodeFile(util.GetWorkingDirectory()+"/"+LANG_PACK_EN_FILE, &langPacksEn); err != nil {
 		panic(err)
 	}
-	if _, err := toml.DecodeFile(util.GetWorkingDirectory() + "/" + LANG_PACK_RU_FILE, &langPacksRu); err != nil {
+	if _, err := toml.DecodeFile(util.GetWorkingDirectory()+"/"+LANG_PACK_RU_FILE, &langPacksRu); err != nil {
 		panic(err)
 	}
 }

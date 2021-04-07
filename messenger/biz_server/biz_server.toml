@@ -12,7 +12,7 @@ addr = "0.0.0.0:10001"
 [rpcServer.rpcDiscovery]
 serviceName = "biz"
 nodeID = "node1"
-rPCAddr = "biz_server:10001"
+rPCAddr = "biz-server:10001"
 etcdAddrs = ["http://etcd:2379"]
 interval = "2s"
 tTL = "10s"
@@ -61,12 +61,12 @@ password = ""
 
 [[mysql]]
 name = "immaster"
-dsn = "root:@tcp(mysql:3306)/chatengine?charset=utf8mb4"
+dsn = "phuongct:12345@tcp(mysql:3306)/chatengine?charset=utf8mb4"
 active = 5
 idle = 2
 
 [[mysql]]
 name = "imslave"
-dsn = "root:@tcp(mysql:3306)/chatengine?charset=utf8mb4"
+dsn = "phuongct:12345@tcp(mysql:3306)/chatengine?charset=utf8mb4"
 active = 5
 idle = 2
